@@ -1,0 +1,208 @@
+* {
+  border: 1px solid red;
+  font-family: "Roboto";
+}
+
+.container {
+  height: 100vh;
+  background-color: #fcfbfd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login-container {
+  position: absolute;
+  top: 150px;
+  width: 354px;
+}
+
+.login-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.3em;
+}
+
+.login-input {
+  height: 60px;
+  background: #f0eef0;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: #dfdee2;
+  padding: 1em;
+}
+
+.login-input:focus {
+  border-color: #3b6cc8;
+}
+
+.login-input::-webkit-input-placeholder {
+  color: lightgrey;
+}
+
+.login-input:-ms-input-placeholder {
+  color: lightgrey;
+}
+
+.login-input::-ms-input-placeholder {
+  color: lightgrey;
+}
+
+.login-input::placeholder {
+  color: lightgrey;
+}
+
+.login-btn {
+  height: 60px;
+  color: #eeeeee;
+  background: -webkit-gradient(linear, left top, right top, from(#003c7f), to(#41ae7c));
+  background: linear-gradient(to right, #003c7f, #41ae7c);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.logo-container {
+  margin-bottom: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.logo {
+  width: 90%;
+  height: 50px;
+}
+
+header {
+  height: 104px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-bottom: 1px solid #dfdee2;
+}
+
+.header-logo-container {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-logo {
+  height: 40px;
+}
+
+.tray {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: end;
+          flex-direction: end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tray > * {
+  margin-left: 1em;
+}
+
+.timer {
+  background-color: #41ae7c;
+  color: white;
+  height: 55px;
+  width: 85px;
+  border-radius: 30px;
+  text-align: center;
+  padding: 18px;
+}
+
+.user-profile {
+  border: 1px solid grey;
+  border-radius: 30px;
+  height: 55px;
+  width: 160px;
+  text-align: center;
+  padding: 18px;
+}
+
+.container-dashboard {
+  background-color: #fcfbfd;
+  height: calc(100vh - 104px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.buttons {
+  height: 260px;
+  width: 520px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.buttons button {
+  background-color: white;
+  width: 250px;
+  height: 250px;
+  border: 1px solid #dfdee2;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.button-icon {
+  height: 50%;
+  padding: 3em;
+}
+
+.button-text {
+  font-size: 20px;
+  height: 50%;
+  padding-top: 3em;
+  padding-left: 2em;
+}
+/*# sourceMappingURL=input.css.map */

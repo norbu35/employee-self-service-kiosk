@@ -1,0 +1,160 @@
+// Global colors
+$bg-primary: linear-gradient(to right, #003c7f, #41ae7c);
+$bg-grey: #fcfbfd;
+$btn-green: #41ae7c;
+$text-white: rgb(238, 238, 238);
+$placeholder: lightgrey;
+$login-bg: #f0eef0;
+$login-input-border: #dfdee2;
+$login-input-border-focused: #3b6cc8;
+
+* {
+  border: 1px solid red;
+  font-family: "Roboto";
+}
+
+//Login Page
+.container {
+  height: 100vh;
+  background-color: #fcfbfd;
+  display: flex;
+  justify-content: center;
+}
+
+// Login Form
+.login-container {
+  position: absolute;
+  top: 150px;
+  width: 354px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+}
+
+.login-input {
+  height: 60px;
+  background: $login-bg;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: $login-input-border;
+  padding: 1em;
+}
+
+.login-input:focus {
+  border-color: $login-input-border-focused;
+}
+
+.login-input::placeholder {
+  color: $placeholder;
+}
+
+.login-btn {
+  height: 60px;
+  color: $text-white;
+  background: $bg-primary;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.logo-container {
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 90%;
+  height: 50px;
+}
+
+//Dashboard
+header {
+  height: 104px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #dfdee2;
+}
+
+.header-logo-container {
+  width: 30%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.header-logo {
+  height: 40px;
+}
+
+.tray {
+  width: 30%;
+  display: flex;
+  flex-direction: end;
+  justify-content: end;
+  align-items: center;
+}
+
+.tray > * {
+  margin-left: 1em;
+}
+
+.timer {
+  background-color: $btn-green;
+  color: white;
+  height: 55px;
+  width: 85px;
+  border-radius: 30px;
+  text-align: center;
+  padding: 18px;
+}
+
+.user-profile {
+  border: 1px solid grey;
+  border-radius: 30px;
+  height: 55px;
+  width: 160px;
+  text-align: center;
+  padding: 18px;
+}
+
+.container-dashboard {
+  background-color: $bg-grey;
+  height: calc(100vh - 104px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  height: 260px;
+  width: 520px;
+  display: grid;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.buttons button {
+  background-color: white;
+  width: 250px;
+  height: 250px;
+  border: 1px solid #dfdee2;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-icon {
+  height: 50%;
+  padding: 3em;
+}
+
+.button-text {
+  font-size: 20px;
+  height: 50%;
+  padding-top: 3em;
+  padding-left: 2em;
+}
