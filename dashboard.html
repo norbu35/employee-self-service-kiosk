@@ -13,27 +13,56 @@
   </head>
   <body>
     <header>
-      <div class="header-logo-container">
-        <img src="logo.png" alt="Golomt Logo" class="header-logo" />
-      </div>
-      <div class="tray">
-        <div class="timer">6:00</div>
-        <div class="user-profile">E. Norov</div>
+      <div class="header__wrapper">
+        <div class="header__logo__wrapper">
+          <img src="logo.png" alt="Golomt Logo" />
+        </div>
+        <div class="header__tray">
+          <div class="header__tray__timer">6:00</div>
+          <div class="header__tray__user-profile">
+            <img
+              src="./icons/user.svg"
+              alt="icon"
+              style="height: 20px"
+              class="header__tray__user-profile__user-icon"
+            />
+            <div class="username">E. Norov</div>
+          </div>
+        </div>
       </div>
     </header>
     <main>
-      <div class="container-dashboard">
-        <grid class="buttons">
-          <button style="grid-column: 1/2">
-            <div class="button-icon">Icon</div>
-            <div class="button-text">Цалинтай</div>
+      <div class="dashboard__wrapper">
+        <grid class="dashboard__grid">
+          <button class="dashboard__item" style="grid-column: 1/2">
+            <div class="dashboard__item__icon">
+              <img src="./icons/bag.svg" alt="icon" />
+            </div>
+            <div class="dashboard__item__text">
+              <span style="font-size: 16px; color: grey">
+                Ажлын байрны тодорхойлолт
+              </span>
+              <br />
+              <span style="font-weight: bold">ЦАЛИНТАЙ</span>
+            </div>
           </button>
-          <button style="grid-column: 2/3">
-            <div class="button-icon">Icon</div>
-            <div class="button-text">Цалингүй</div>
+          <button class="dashboard__item" style="grid-column: 2/3">
+            <div class="dashboard__item__icon">
+              <img src="./icons/bag.svg" alt="icon" />
+            </div>
+            <div class="dashboard__item__text">
+              <span style="font-size: 16px; color: grey">
+                Ажлын байрны тодорхойлолт
+              </span>
+              <br />
+              <span style="font-weight: bold">ЦАЛИНГҮЙ</span>
+            </div>
           </button>
         </grid>
       </div>
     </main>
+    <div class="keyboard">
+      <div class="keyboard-keys"></div>
+    </div>
   </body>
 </html>
