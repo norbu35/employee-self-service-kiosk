@@ -14,6 +14,38 @@
   </head>
   <body>
     <div class="login__wrapper">
+      <div class="alert">
+        <div class="alert-container">
+          <div class="alert-danger-mark"></div>
+          <div class="danger">&times;</div>
+          <div class="alert-text error-text">
+            <div class="error-text-one"><strong>Алдаа!!!</strong></div>
+            <div class="error-text-two">
+              Таны нэвтрэх нэр эсвэл нууц үг буруу байна.
+            </div>
+          </div>
+          <span
+            class="closebtn danger-btn"
+            onclick="this.parentElement.style.display='none';"
+            >&times;</span
+          >
+        </div>
+        <div class="alert-container alert-warning">
+          <div class="alert-warning-mark"></div>
+          <div class="warning">!</div>
+          <div class="alert-text">
+            <div class="error-text-one"><strong>Анхаар!!!</strong></div>
+            <div class="warning-text-two">
+              Танд нууц үгээ хийх 4 удаагын оролдлого үлдлээ.
+            </div>
+          </div>
+          <span
+            class="closebtn"
+            onclick="this.parentElement.style.display='none';"
+            >&times;</span
+          >
+        </div>
+      </div>
       <form class="login__form">
         <div class="login__logo__wrapper">
           <img src="./logo.png" alt="logo" />

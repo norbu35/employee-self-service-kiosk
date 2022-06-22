@@ -7,7 +7,10 @@ $placeholder: lightgrey;
 $login-bg: #f0eef0;
 $login-input-border: #dfdee2;
 $login-input-border-focused: #3b6cc8;
-
+$error-text: #21242E;
+$error-text-two: #002E46;
+$warning:#E8A029;
+$danger: #E9594C;
 * {
   // border: 1px solid red;
   font-family: "Roboto";
@@ -168,4 +171,111 @@ $login-input-border-focused: #3b6cc8;
       }
     }
   }
+}
+/*Alert*/
+.alert{
+  display: flex;
+  flex-direction: column;
+  width: 514px;
+  margin-top: 40px;
+  &-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 93px;
+    /* UI Properties */
+    background: #FFD0CB 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+  }
+  &-danger-mark{
+    width: 17px;
+    height: inherit;
+    background: #E7594D 0% 0% no-repeat padding-box;
+    box-shadow: 0px 17px 36px #0063E30F;
+    border-radius: 10px 0px 0px 10px;
+  }
+  &-text{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.danger{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:$danger;
+  margin-left: 21px;
+  width: 26px;
+  height: 26px;
+  border: 2px solid $danger;
+  border-radius: 5px;
+}
+
+.error-text{
+  margin-left: 23px;
+  &-one{
+    width: 87px;
+    height: 26px;
+    text-align: left;
+    font: normal normal 600 22px/26px SF Pro Rounded;
+    letter-spacing: 0px;
+    color: $error-text;
+  }
+  &-two{
+    width: 325px;
+    height: 19px;
+    text-align: left;
+    font: normal normal medium 16px/19px SF Pro Rounded;
+    letter-spacing: 0px;
+    color: $error-text-two;
+    opacity: 0.5;
+  }
+}
+
+.closebtn {
+  top: 80px;
+  left: 1171px;
+  margin: auto;
+  width: 16px;
+  height: 16px;
+  color: #7F7F88 0% 0% no-repeat padding-box;
+}
+.danger-btn{
+  margin-right: 21px;
+}
+.alert-warning{
+  margin-top: 22px;
+  width: 513px;
+  height: 94px;
+  background: #FFE8C3 0% 0% no-repeat padding-box;
+  border-radius: 10px;
+  &-mark{
+    width: 16px;
+    height: 94px;
+    background: #E8A029 0% 0% no-repeat padding-box;
+    box-shadow: 0px 17px 36px #0063E30F;
+    border-radius: 10px 0px 0px 10px;
+  }
+  
+}
+.warning-text-two{
+width: 362px;
+height: 19px;
+text-align: left;
+font: normal normal medium 16px/19px SF Pro Rounded;
+letter-spacing: 0px;
+color: $error-text-two;
+opacity: 0.5;
+}
+.warning{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:$warning;
+  margin: auto;
+  width: 26px;
+  height: 23px;
+  border: 2px solid $warning;
+  border-radius: 5px;
 }
