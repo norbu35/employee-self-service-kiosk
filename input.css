@@ -202,14 +202,12 @@
   height: 16px;
   cursor: pointer;
   color: #7F7F88 0% 0% no-repeat padding-box;
-}
-
-.danger-btn {
-  margin-right: 25px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .warning-btn {
-  margin-right: 24px;
+  padding-right: 53px;
 }
 
 .alert-warning {
@@ -240,4 +238,20 @@
 }
 .warning-text-two {
   width: 362px;
+}
+
+.alert--hidden {
+  display: none;
+}
+
+.timeLimit-hidden {
+  display: none;
+}
+
+.timeLimit {
+  width: inherit;
+  height: 19px;
+  text-align: center;
+  font: normal normal medium 16px/19px SF Pro Rounded;
+  letter-spacing: 0px;
 }/*# sourceMappingURL=input.css.map */

@@ -14,7 +14,8 @@
   </head>
   <body>
     <div class="login__wrapper">
-      <div class="alert">
+      <div class="form__message form__message--error"></div>
+      <div class="alert alert--hidden" id="alert">
         <div class="alert-container">
           <div class="alert-danger-mark"></div>
           <div class="danger">&times;</div>
@@ -36,7 +37,9 @@
           <div class="error-text">
             <div class="error-text-one"><strong>Анхаар!!!</strong></div>
             <div class="error-text-two warning-text-two">
-              Танд нууц үгээ хийх 4 удаагын оролдлого үлдлээ.
+              Танд нууц үгээ хийх
+              <span id="count"></span>
+              удаагын оролдлого үлдлээ.
             </div>
           </div>
           <span
@@ -62,7 +65,12 @@
           name="password"
           placeholder="Password"
         />
-        <button class="login__button" type="submit">Login</button>
+        <button class="login__button" id="login__button" type="submit">
+          Login
+        </button>
+        <div class="timeLimit timeLimit-hidden">
+          Та 0:30 секундын дараа дахин олдоно уу.
+        </div>
       </form>
     </div>
     <script src="main.js" async defer></script>
