@@ -194,10 +194,6 @@ $danger: #E9594C;
     box-shadow: 0px 17px 36px #0063E30F;
     border-radius: 10px 0px 0px 10px;
   }
-  &-text{
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 .danger{
@@ -213,6 +209,8 @@ $danger: #E9594C;
 }
 
 .error-text{
+  display: flex;
+  flex-direction: column;
   margin-left: 23px;
   &-one{
     width: 87px;
@@ -234,15 +232,17 @@ $danger: #E9594C;
 }
 
 .closebtn {
-  top: 80px;
-  left: 1171px;
-  margin: auto;
+  margin:auto;
   width: 16px;
   height: 16px;
+  cursor: pointer;
   color: #7F7F88 0% 0% no-repeat padding-box;
 }
 .danger-btn{
-  margin-right: 21px;
+  margin-right: 25px;
+}
+.warning-btn{
+  margin-right: 24px;
 }
 .alert-warning{
   margin-top: 22px;
@@ -257,25 +257,18 @@ $danger: #E9594C;
     box-shadow: 0px 17px 36px #0063E30F;
     border-radius: 10px 0px 0px 10px;
   }
-  
-}
-.warning-text-two{
-width: 362px;
-height: 19px;
-text-align: left;
-font: normal normal medium 16px/19px SF Pro Rounded;
-letter-spacing: 0px;
-color: $error-text-two;
-opacity: 0.5;
 }
 .warning{
   display: flex;
   align-items: center;
   justify-content: center;
   color:$warning;
-  margin: auto;
+  margin-left: 22px;
   width: 26px;
   height: 23px;
   border: 2px solid $warning;
   border-radius: 5px;
+  &-text-two{
+    width: 362px;
+  }
 }

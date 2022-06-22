@@ -160,10 +160,6 @@
   box-shadow: 0px 17px 36px rgba(0, 99, 227, 0.0588235294);
   border-radius: 10px 0px 0px 10px;
 }
-.alert-text {
-  display: flex;
-  flex-direction: column;
-}
 
 .danger {
   display: flex;
@@ -178,6 +174,8 @@
 }
 
 .error-text {
+  display: flex;
+  flex-direction: column;
   margin-left: 23px;
 }
 .error-text-one {
@@ -199,16 +197,19 @@
 }
 
 .closebtn {
-  top: 80px;
-  left: 1171px;
   margin: auto;
   width: 16px;
   height: 16px;
+  cursor: pointer;
   color: #7F7F88 0% 0% no-repeat padding-box;
 }
 
 .danger-btn {
-  margin-right: 21px;
+  margin-right: 25px;
+}
+
+.warning-btn {
+  margin-right: 24px;
 }
 
 .alert-warning {
@@ -226,24 +227,17 @@
   border-radius: 10px 0px 0px 10px;
 }
 
-.warning-text-two {
-  width: 362px;
-  height: 19px;
-  text-align: left;
-  font: normal normal medium 16px/19px SF Pro Rounded;
-  letter-spacing: 0px;
-  color: #002E46;
-  opacity: 0.5;
-}
-
 .warning {
   display: flex;
   align-items: center;
   justify-content: center;
   color: #E8A029;
-  margin: auto;
+  margin-left: 22px;
   width: 26px;
   height: 23px;
   border: 2px solid #E8A029;
   border-radius: 5px;
+}
+.warning-text-two {
+  width: 362px;
 }/*# sourceMappingURL=input.css.map */
