@@ -55,17 +55,24 @@
         </div>
         <input
           class="login__input"
+          id="username"
           type="text"
           name="username"
           placeholder="Username"
         />
         <input
           class="login__input"
+          id="password"
           type="password"
           name="password"
           placeholder="Password"
         />
-        <button class="login__button" id="login__button" type="submit">
+        <button
+          class="login__button"
+          id="login__button"
+          type="submit"
+          onclick="loginClick()"
+        >
           Login
         </button>
         <div class="timeLimit timeLimit-hidden">
