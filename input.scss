@@ -217,6 +217,7 @@ $danger: #E9594C;
     height: 26px;
     text-align: left;
     font: normal normal 600 22px/26px SF Pro Rounded;
+    font-weight: bold;
     letter-spacing: 0px;
     color: $error-text;
   }
@@ -283,4 +284,64 @@ height: 19px;
 text-align: center;
 font: normal normal medium 16px/19px SF Pro Rounded;
 letter-spacing: 0px;
+}
+
+//dashboard_4 content
+.dashboard{
+  &__main{
+    display: flex;
+    margin-top: 20px;
+    padding-left: 143px;
+  }
+  &__back_btn{
+    display: flex;
+    justify-content: start;
+    border: 1px solid grey;
+    border-radius: 30px;
+    width: 160px;
+    height: 55px;
+  }
+  &_4__wrapper{
+    display: flex;
+    margin-left: 70px;
+    width: 660px;
+    height: 405px;
+    border: 1px solid #dbd8de ;
+    border-radius: 30px;
+    &__content{
+      display: flex;
+      flex-direction: column;
+      margin: 2em 3em;
+      width: 550px;
+    }
+  }
+
+}
+.zz{
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0em;
+  align-items: center;
+  &_input{
+     width: 400px;
+     height: 50px;
+     background-color:$login-bg ;
+     border: 1px solid  $login-input-border;
+     border-radius: 5px;
+     margin-right: 1em;
+     padding-left:1em;
+     &::placeholder {
+      color: $placeholder;
+    }
+  }
+  &_next_button{
+    width: 255px;
+    height: 55px;
+    color: $text-white;
+    background: $bg-primary;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 145px;
+    margin-top:1.5em;
+  }
 }
