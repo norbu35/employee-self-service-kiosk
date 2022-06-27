@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipient</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/the-new-css-reset/css/reset.css"
+    />
+    <link rel="stylesheet" href="input.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header__wrapper">
+        <div class="header__logo__wrapper">
+          <img src="logo.png" alt="Golomt Logo" />
+        </div>
+        <div class="header__tray">
+          <div class="header__tray__timer">6:00 Гарах</div>
+          <div class="header__tray__user-profile">
+            <img
+              src="./icons/user.svg"
+              alt="icon"
+              style="height: 20px"
+              class="header__tray__user-profile__user-icon"
+            />
+            <div class="username">E. Norov</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="dashboard__wrapper">
+        <div class="dashboard__back-button">
+          <button>
+            <span class="dashboard__back-button__arrow"><</span>
+            <span class="dashboard__back-button__text">Буцах</span>
+          </button>
+        </div>
+        <div class="recipient__wrapper">
+          <div class="recipient__content">
+            <p style="font-weight: bold; font-size: 25px">
+              <strong>Ажлын байрны тодорхойлолт цалинтай</strong>
+            </p>
+            <p style="font-size: 15px; margin: 1em 0em">
+              Golomt Bank is one of the largest privately owned banks in
+              Mongolia. Founded on March 6 of 1995, Golomt Banck grew into the
+              leading.
+            </p>
+            <div class="recipient__form">
+              <p class="recipient__form__purpose">Зориулалт:</p>
+              <input
+                class="recipient__form__input use-keyboard-input"
+                type="text"
+                name="purpose"
+                placeholder="Зээл"
+              />
+            </div>
+            <div class="recipient__form">
+              <p class="recipient__form__purpose">Хаана зориулж:</p>
+              <input
+                class="recipient__form__input use-keyboard-input"
+                type="text"
+                name="recipient"
+                placeholder="Хаана зориулж авах гэж байгаагаа бичнэ үү."
+              />
+            </div>
+            <div class="recipient__button__wrapper">
+              <button class="recipient__button">
+                Үргэлжлүүлэх
+              </button>
+            </div>
+              
+          </div>
+        </div>
+        <div class="dashboard__back-button--hidden"></div>
+      </div>
+    </main>
+    </div>
+    <script src="main.js" async defer></script>
+    <script src="keyboard/keyboard.js"></script>
+  </body>
+</html>
