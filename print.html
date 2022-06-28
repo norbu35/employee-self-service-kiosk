@@ -144,15 +144,9 @@
       const hideButton = document.querySelector(".print__hide-button");
       const salaryFields = document.querySelectorAll(".salary");
       const hideIcon = document.querySelector("#hide-icon");
-      const button = document.querySelector(".print__button");
 
       let hide = true;
 
-      button.addEventListener("click", () => {
-        //const width = ;
-        //window.print();
-        window.location = "./template.html";
-      });
       if (!sessionStorage.getItem("withSalary")) {
         salaryFields.forEach((field) => (field.style.display = "none"));
       }

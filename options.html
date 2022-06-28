@@ -18,7 +18,13 @@
           <img src="icons/logo.png" alt="Golomt Logo" />
         </div>
         <div class="header__tray">
-          <div class="header__tray__timer" id="logout-button" onclick="window.location = './'">6:00 Гарах</div>
+          <div
+            class="header__tray__timer"
+            id="logout-button"
+            onclick="window.location = './'"
+          >
+            6:00 Гарах
+          </div>
           <div class="header__tray__user-profile">
             <img
               src="./icons/user.svg"
@@ -35,14 +41,17 @@
       <div class="dashboard__wrapper">
         <div class="dashboard__back-button">
           <button onclick="history.back()">
-            <img class="dashboard__back-button__arrow" src='icons/back.svg' />
+            <img class="dashboard__back-button__arrow" src="icons/back.svg" />
             <span class="dashboard__back-button__text">Буцах</span>
           </button>
         </div>
         <div class="options__wrapper">
           <div class="options__content">
             <p style="font-weight: bold; font-size: 25px">
-              <strong>Ажлын байрны тодорхойлолт <span class="with__salary"></span></strong>
+              <strong
+                >Ажлын байрны тодорхойлолт
+                <span class="with-salary">цалинтай</span></strong
+              >
             </p>
             <p style="font-size: 15px; margin: 1em 0em">
               Golomt Bank is one of the largest privately owned banks in
@@ -70,7 +79,10 @@
               />
             </div>
             <div class="options__button__wrapper">
-              <button class="options__button" onclick="window.location = './print.html'">
+              <button
+                class="options__button"
+                onclick="window.location = './print.html'"
+              >
                 Үргэлжлүүлэх
               </button>
             </div>
@@ -79,22 +91,19 @@
         <div class="dashboard__back-button--hidden"></div>
       </div>
     </main>
-    </div>
     <script async defer>
       const button = document.querySelector(".options__button");
-      const salaryText = document.getElementsByClassName("options__content");
-      if(sessionStorage.getItem("withSalary")===true){
-        salaryText.getElementsByClassName("with__salary").innerHTML = "ЦАЛИНТАЙ";
-      }else if(sessionStorage.getItem("withSalary")===false){
-        salaryText.getElementsByClassName("with__salary").innerHTML = "ЦАЛИНГҮЙ";
-      }
+      const withSalary = document.querySelector(".with-salary");
+
+      if (sessionStorage.getItem("withSalary") == "false")
+        withSalary.textContent = "цалингүй";
+
       button.addEventListener("click", () => {
         const recipient = document.querySelector("#recipient").value;
         const purpose = document.querySelector("#purpose").value;
         sessionStorage.setItem("recipient", recipient);
         sessionStorage.setItem("purpose", purpose);
       });
-           
     </script>
     <script src="keyboard/keyboard.js"></script>
   </body>
