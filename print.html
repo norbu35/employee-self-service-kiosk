@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Self-Service</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/the-new-css-reset/css/reset.css"
+    />
+    <link rel="stylesheet" href="input.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header__wrapper">
+        <div class="header__logo__wrapper">
+          <img src="icons/logo.png" alt="Golomt Logo" />
+        </div>
+        <div class="header__tray">
+          <div
+            class="header__tray__timer"
+            id="logout-button"
+            onclick="window.location = './'"
+          >
+            6:00 Гарах
+          </div>
+          <div class="header__tray__user-profile">
+            <img
+              src="./icons/user.svg"
+              alt="icon"
+              style="height: 20px"
+              class="header__tray__user-profile__user-icon"
+            />
+            <div class="username">E. Norov</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="dashboard__wrapper">
+        <div class="dashboard__back-button">
+          <button onclick="history.back()">
+            <span class="dashboard__back-button__arrow"><</span>
+            <span class="dashboard__back-button__text">Буцах</span>
+          </button>
+        </div>
+        <div class="print__wrapper">
+          <div class="print__page">
+            <!-- <iframe id="template-frame" src="template.html" frameborder="0" scrolling="no"></iframe> -->
+            <div class="container">
+              <div class="container__cont">
+                <header>
+                  <div class="head__logo">
+                    <img src="icons/logo.png" alt="logo" />
+                  </div>
+                  <p>Голомт банкны Төв байр, Д.Сүхбаатар талбай 5,</p>
+                  <p>Ш/х 22, Улаанбаатар 15160, Монгол улс</p>
+                  <p>Утас: 7011-1646, 1800-1646, Факс: 11-313155</p>
+                  <p>И-мэйл: mail@golomtbank.com,</p>
+                  <p>Вэб: www.golomtbank.com</p>
+                </header>
+                <div style="text-align: center; margin: 1em">
+                  _________№__________
+                </div>
+                <h1>
+                  <span class="recipient"
+                    >СОНГИНОХАЙРХАН ДҮҮРГИЙН ЗАСАГ ДАРГЫН ЦЭРГИЙН ШТАБ </span
+                  >-д
+                </h1>
+                <div style="text-align: justify">
+                  &nbsp; &nbsp; &nbsp; &nbsp;<span
+                    >Баасанжаргал овогтой Ачгэрэл</span
+                  >
+                  нь Голомт банкны СТТ-10-р хороолол салбарт Харилцааны менежер
+                  ажилтай бөгөөд тус банкинд 2020 оны 09 сарын 16-ны өдрөөс
+                  эхлэн ажиллаж байгаа нь үнэн болно.
+                  <span class="salary"> Цалин: 2,500,000₮.</span>
+                </div>
+                <div class="container__cont__dir">
+                  <div style="width: 300px; text-align: end">
+                    ХҮНИЙ НӨӨЦИЙН УДИРДЛАГЫН ГАЗРЫН ЗАХИРАЛ
+                  </div>
+                  <span style="width: 150px"></span>
+                  <div style="align-self: flex-end">Г.Уянга</div>
+                </div>
+              </div>
+              <div class="container__cont">
+                <header>
+                  <div class="head__logo">
+                    <img src="icons/logo.png" alt="logo" />
+                  </div>
+                  <p>Head Office of Golomt bank, D.Sukhbaatar Square 5,</p>
+                  <p>P.O.Box 22, Ulaanbaatar 15160, Mongolia</p>
+                  <p>Phone:+(976)-7011-1646, 1800-1646, Fax:+(976)-11-313155</p>
+                  <p>E-mail: mail@golomtbank.com, Web: www.golomtbank.com</p>
+                </header>
+                <div style="text-align: center; margin: 2em 1em">
+                  _________№__________
+                </div>
+                <h1>
+                  To <span class="recipient">Chonnam National University </span>
+                </h1>
+                <div style="text-align: justify">
+                  &nbsp; &nbsp; &nbsp; &nbsp;This is to certify that Mr.<span
+                    >Achgerel Baasanjargal</span
+                  >
+                  has been working as a Relationship Manager at "10-r khoroolol"
+                  Branch of Golomt Bank since September 16, 2020.<span
+                    class="salary"
+                  >
+                    Salary: 2,500,000₮.</span
+                  >
+                  <div style="text-align: justify; margin: 1em 0em">
+                    &nbsp; &nbsp; &nbsp; &nbsp; Should you have any questions or
+                    need further information, please do not hesitate to contact
+                    us.
+                  </div>
+                  <div style="text-align: justify">With best regards,</div>
+                </div>
+                <div class="container__cont__dir">
+                  <div>
+                    <div style="margin-bottom: 1em">G.Uyanga</div>
+                    <div>Director</div>
+                    <span style="width: 150px"></span>
+                    <div>Human Resource Management Division</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="print__hide-button">
+            <img src="icons/show.svg" id="hide-icon" alt="hide icon" />
+          </div>
+          <div class="print__button">
+            <button>Print</button>
+          </div>
+        </div>
+        <div class="dashboard__back-button--hidden"></div>
+      </div>
+    </main>
+    <script async defer>
+      const recipient = document.querySelectorAll(".recipient");
+      const hideButton = document.querySelector(".print__hide-button");
+      const salaryFields = document.querySelectorAll(".salary");
+      const hideIcon = document.querySelector("#hide-icon");
+
+      let hide = true;
+
+      if (!sessionStorage.getItem("withSalary")) {
+        salaryFields.forEach((field) => (field.style.display = "none"));
+      }
+
+      recipient.forEach((e) => {
+        e.innerText = sessionStorage.getItem("recipient");
+      });
+
+      hideButton.addEventListener("click", () => {
+        hide = !hide;
+        if (hide) {
+          hideIcon.src = "icons/show.svg";
+        } else hideIcon.src = "icons/hide.svg";
+
+        salaryFields.forEach((field) =>
+          field.classList.toggle("print--show-salary")
+        );
+      });
+    </script>
+  </body>
+</html>

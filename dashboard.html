@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>Employee Self-Service</title>
     <link
       rel="stylesheet"
       href="./node_modules/the-new-css-reset/css/reset.css"
@@ -15,10 +15,14 @@
     <header>
       <div class="header__wrapper">
         <div class="header__logo__wrapper">
-          <img src="logo.png" alt="Golomt Logo" />
+          <img src="icons/logo.png" alt="Golomt Logo" />
         </div>
         <div class="header__tray">
-          <div class="header__tray__timer">6:00 Гарах</div>
+          <div class="header__tray__timer">
+            <button class="logout-button" onclick="window.location = './'">
+              6:00 Гарах
+            </button>
+          </div>
           <div class="header__tray__user-profile">
             <img
               src="./icons/user.svg"
@@ -34,7 +38,11 @@
     <main>
       <div class="dashboard__wrapper">
         <grid class="dashboard__grid">
-          <button class="dashboard__item" style="grid-column: 1/2">
+          <button
+            class="dashboard__item"
+            id="with-salary"
+            style="grid-column: 1/2"
+          >
             <div class="dashboard__item__icon">
               <img src="./icons/bag.svg" alt="icon" />
             </div>
@@ -46,7 +54,11 @@
               <span style="font-weight: bold">ЦАЛИНТАЙ</span>
             </div>
           </button>
-          <button class="dashboard__item" style="grid-column: 2/3">
+          <button
+            class="dashboard__item"
+            id="without-salary"
+            style="grid-column: 2/3"
+          >
             <div class="dashboard__item__icon">
               <img src="./icons/bag.svg" alt="icon" />
             </div>
@@ -61,5 +73,24 @@
         </grid>
       </div>
     </main>
+    <script async defer>
+      const withSalary = document.querySelector("#with-salary");
+      const withoutSalary = document.querySelector("#without-salary");
+
+      withSalary.addEventListener("click", () => {
+        sessionStorage.setItem("withSalary", true);
+        window.location = "./options.html";
+      });
+      withSalary.addEventListener("mousedown", () => {
+        withSalary.classList.add("dashboard__item--clicked");
+      });
+      withoutSalary.addEventListener("click", () => {
+        sessionStorage.setItem("withSalary", false);
+        window.location = "./options.html";
+      });
+      withoutSalary.addEventListener("mousedown", () => {
+        withoutSalary.classList.add("dashboard__item--clicked");
+      });
+    </script>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Golomt Kiosk</title>
+    <title>Employee Self-Service</title>
     <meta name="description" content="User Login" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -15,7 +15,9 @@
   <body>
     <div class="login__wrapper">
       <!-- Failed login warning -->
-      <div class="login__alert login__alert--hidden">
+      <div
+        class="login__alert login__alert--hidden login__alert--run-animation"
+      >
         <div class="login__alert__icon">&times;</div>
         <div class="login__alert__text__wrapper">
           <div class="login__alert__header">Алдаа</div>
@@ -27,11 +29,10 @@
           </div>
         </div>
       </div>
-
       <!-- Login input -->
       <form class="login__form">
         <div class="login__logo__wrapper">
-          <img src="./logo.png" alt="logo" />
+          <img src="icons/logo.png" alt="logo" />
         </div>
         <input
           class="login__input use-keyboard-input"
@@ -40,7 +41,11 @@
           name="username"
           placeholder="Домэйн"
         />
-        <img class="login__input__icon" src="./icons/hide.svg" alt="icon" />
+        <img
+          class="login__input__icon"
+          src="./icons/show_grey.svg"
+          alt="icon"
+        />
         <input
           class="login__input use-keyboard-input"
           id="password"

@@ -1,13 +1,14 @@
 const alert = document.querySelector(".login__alert");
-const button = document.querySelector(".login__button");
-const inputs = document.querySelectorAll(".login__input");
+const loginButton = document.querySelector(".login__button");
+const loginInputs = document.querySelectorAll(".login__input");
 const inputIcon = document.querySelector(".login__input__icon");
+let hidePassword = true;
 const username = "user";
 const password = "pass";
 const timeOut = 30;
 let attempts = 5;
 
-button.addEventListener("click", (e) => {
+loginButton.addEventListener("click", (e) => {
   e.preventDefault();
   inputUsername = document.getElementById("username").value;
   inputPassword = document.getElementById("password").value;
@@ -15,6 +16,9 @@ button.addEventListener("click", (e) => {
   if (inputUsername !== username || inputPassword !== password) {
     document.getElementById("username").style.borderColor = "red";
     document.getElementById("password").style.borderColor = "red";
+    alert.classList.remove("login__alert--run-animation");
+    void alert.offsetWidth;
+    alert.classList.add("login__alert--run-animation");
 
     if (attempts > 0) attempts--;
     document.getElementById("attempts").innerHTML = attempts;
@@ -28,19 +32,24 @@ button.addEventListener("click", (e) => {
   }
 });
 
-inputs.forEach((input) => {
+loginInputs.forEach((input) => {
   input.addEventListener("focus", (e) => {
     e.target.style.borderColor = "#3b6cc8";
   });
 });
 
-inputs.forEach((input) => {
+loginInputs.forEach((input) => {
   input.addEventListener("blur", (e) => {
     e.target.style.borderColor = "#dfdee2";
   });
 });
 
 inputIcon.addEventListener("click", (e) => {
+  if (hidePassword) {
+    inputIcon.src = "icons/hide_grey.svg";
+  } else inputIcon.src = "icons/show_grey.svg";
+  hidePassword = !hidePassword;
+
   if (document.querySelector("#password").getAttribute("type") === "password")
     document.querySelector("#password").setAttribute("type", "text");
   else document.querySelector("#password").setAttribute("type", "password");

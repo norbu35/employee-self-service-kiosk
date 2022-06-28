@@ -1,7 +1,7 @@
 // Global colors
 $bg-primary: linear-gradient(to right, #003c7f, #41ae7c);
 $bg-grey: #fcfbfd;
-$button-green: #41ae7c;
+$button-red: #cd3139;
 $text-white: rgb(238, 238, 238);
 $placeholder: rgb(180, 180, 180);
 $login-bg: #f0eef0;
@@ -22,6 +22,29 @@ $key-bg-color-pressed-special: linear-gradient(
 * {
   // border: 1px solid red;
   font-family: "Roboto";
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
 //Login Page
@@ -51,6 +74,8 @@ $key-bg-color-pressed-special: linear-gradient(
     background: #ffd0cb 0% 0% no-repeat padding-box;
     border-radius: 10px;
     border-left: 15px solid #e7594d;
+    animation-name: shake;
+    animation-duration: 1s;
 
     &__icon {
       display: flex;
@@ -210,13 +235,18 @@ $key-bg-color-pressed-special: linear-gradient(
     }
 
     &__timer {
-      background-color: $button-green;
+      background-color: $button-red;
       color: white;
       height: 55px;
       width: 150px;
       border-radius: 30px;
       text-align: center;
       padding: 18px;
+      cursor: pointer;
+
+      & > * {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -235,13 +265,19 @@ $key-bg-color-pressed-special: linear-gradient(
     display: flex;
     padding-left: 2em;
     justify-content: start;
+    align-items: start;
     border: 1px solid lightgrey;
     border-radius: 30px;
     width: 150px;
     height: 55px;
     position: relative;
     top: -350px;
-    left: -150px;
+    left: -210px;
+    cursor: pointer;
+
+    & > * {
+      cursor: pointer;
+    }
 
     &--hidden {
       visibility: hidden;
@@ -249,7 +285,12 @@ $key-bg-color-pressed-special: linear-gradient(
 
     &__arrow {
       color: rgb(98, 215, 98);
+      margin-top: 1em;
       margin-right: 1em;
+      height: 20px;
+    }
+
+    &__text {
       font-weight: 900;
     }
   }
@@ -280,6 +321,11 @@ $key-bg-color-pressed-special: linear-gradient(
         padding-top: 2.5em;
         padding-left: 2em;
       }
+
+      &--clicked {
+        background: $bg-primary;
+        color: white;
+      }
     }
 
     .dashboard__item_selected {
@@ -288,11 +334,11 @@ $key-bg-color-pressed-special: linear-gradient(
   }
 }
 
-.recipient {
+.options {
   &__wrapper {
     background-color: white;
     display: flex;
-    width: 1300px;
+    width: 1200px;
     height: 420px;
     border: 1px solid #dbd8de;
     border-radius: 30px;
@@ -351,6 +397,116 @@ $key-bg-color-pressed-special: linear-gradient(
     text-align: center;
     margin-left: 145px;
     margin-top: 1.5em;
+    cursor: pointer;
+  }
+}
+
+#template-frame {
+  height: 100%;
+  width: 100%;
+}
+
+.salary {
+  color: transparent;
+  text-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+}
+
+.print {
+  &__wrapper {
+    @extend .options__wrapper;
+    top: 0px;
+    height: 750px;
+    flex-direction: column;
+  }
+
+  &__page {
+    border: 1px solid rgb(136, 133, 133);
+    height: 210 * 3px;
+    width: 297 * 3.8px;
+  }
+
+  &__button {
+    @extend .options__button;
+    margin: 0;
+    margin-top: 1em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__hide-button {
+    background: white;
+    position: fixed;
+    bottom: 150px;
+    border: 1px solid lightgrey;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    & > img {
+      width: 25px;
+    }
+  }
+
+  &--show-salary {
+    color: inherit;
+    text-shadow: none;
+  }
+}
+
+// Template
+.head {
+  &__logo {
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 30%;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 1122px; //11.69in=> 29.6926cm
+  height: 625px; //8.27in=>21.0058cm
+  // border: 2px solid #e9594c;
+
+  h1 {
+    text-align: center;
+    margin: 3em 1em;
+    font-size: 18px;
+  }
+  &__cont {
+    width: 50%;
+    height: inherit;
+    padding: 1em 2.5em;
+
+    p {
+      font-size: small;
+      text-align: center;
+    }
+
+    &__dir {
+      display: flex;
+      flex-direction: row;
+      margin-top: 6em;
+    }
+  }
+
+  &__cont:nth-child(2) {
+    border-left: 1px dotted lightgrey;
   }
 }
 
@@ -445,48 +601,6 @@ $key-bg-color-pressed-special: linear-gradient(
 
     &--active::after {
       background: #38e316;
-    }
-  }
-}
-//description
-.head{
-  &__logo{
-    margin-bottom: 1em;
-      display: flex;
-      justify-content: center;
-  
-      img {
-        width: 30%;
-      }
-  }
-  }
-.container{
-  display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: auto;
-  width: 1122px;//11.69in=> 29.6926cm 
-  height: 794px ;//8.27in=>21.0058cm
-  border: 2px solid #e9594c;
-  
-  h1{
-    text-align: center;
-    margin: 3em 1em;
-    font-size: 18px;
-  }
-  &__cont{
-    width: 50%;
-    height: inherit;
-    border: 1px solid gold;
-    padding: 1em 2.5em;
-    p{
-      font-size: small;
-      text-align: center;
-    }
-    &__dir{
-        display: flex;
-        flex-direction: row;
-        margin-top: 6em;
     }
   }
 }
