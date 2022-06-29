@@ -260,41 +260,6 @@ $key-bg-color-pressed-special: linear-gradient(
     justify-content: center;
   }
 
-  &__back-button {
-    background-color: white;
-    display: flex;
-    padding-left: 2em;
-    justify-content: start;
-    align-items: start;
-    border: 1px solid lightgrey;
-    border-radius: 30px;
-    width: 150px;
-    height: 55px;
-    position: relative;
-    top: -350px;
-    left: -210px;
-    cursor: pointer;
-
-    & > * {
-      cursor: pointer;
-    }
-
-    &--hidden {
-      visibility: hidden;
-    }
-
-    &__arrow {
-      color: rgb(98, 215, 98);
-      margin-top: 1em;
-      margin-right: 1em;
-      height: 20px;
-    }
-
-    &__text {
-      font-weight: 900;
-    }
-  }
-
   &__grid {
     display: grid;
     align-items: center;
@@ -333,7 +298,39 @@ $key-bg-color-pressed-special: linear-gradient(
     }
   }
 }
+.back-button {
+  background-color: white;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  padding-left: 2em;
+  border: 1px solid lightgrey;
+  border-radius: 30px;
+  width: 150px;
+  height: 55px;
+  position: relative;
+  top: -240px;
+  left: -460px;
+  cursor: pointer;
 
+  & > * {
+    cursor: pointer;
+  }
+  &__arrow {
+    color: rgb(98, 215, 98);
+    margin-top: 1em;
+    height: 20px;
+  }
+  &__text {
+    font-weight: 900;
+    margin-top: 1.15em;
+    margin-left: 1.5em;
+    
+  }
+  &--hidden {
+    visibility: hidden;
+  }
+}
 .options {
   &__wrapper {
     background-color: white;

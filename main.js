@@ -14,6 +14,7 @@ loginButton.addEventListener("click", (e) => {
   inputPassword = document.getElementById("password").value;
 
   if (inputUsername !== username || inputPassword !== password) {
+    sessionStorage.setItem("login",false);
     document.getElementById("username").style.borderColor = "red";
     document.getElementById("password").style.borderColor = "red";
     alert.classList.remove("login__alert--run-animation");
@@ -23,12 +24,14 @@ loginButton.addEventListener("click", (e) => {
     if (attempts > 0) attempts--;
     document.getElementById("attempts").innerHTML = attempts;
     alert.classList.remove("login__alert--hidden");
-
+ 
     if (attempts === 0) {
       lockOut(timeOut);
     }
   } else {
     window.location = "./dashboard.html";
+    //--------
+    sessionStorage.setItem("Login", true);
   }
 });
 
