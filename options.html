@@ -18,13 +18,11 @@
           <img src="icons/logo.png" alt="Golomt Logo" />
         </div>
         <div class="header__tray">
-          <div
-            class="header__tray__timer"
-            id="logout-button"
-            onclick="window.location = './'"
-          >
-            6:00 Гарах
-          </div>
+          <button class="logout-button" onclick="window.location = './'">
+            <div class="header__tray__timer">
+              <span id="timer"></span> Гарах
+            </div>
+          </button>
           <div class="header__tray__user-profile">
             <img
               src="./icons/user.svg"
@@ -39,10 +37,10 @@
     </header>
     <main>
       <div class="dashboard__wrapper">
-        <div class="back-button" onclick="history.back()">
-          <img class="back-button__arrow" src="icons/back.svg" />
-          <span class="back-button__text">Буцах</span>
-        </div>
+        <button class="dashboard__back-button" onclick="history.back()">
+          <img class="dashboard__back-button__arrow" src="icons/back.svg" />
+          <span class="dashboard__back-button__text">Буцах</span>
+        </button>
         <div class="options__wrapper">
           <div class="options__content">
             <p style="font-weight: bold; font-size: 25px">
@@ -93,6 +91,14 @@
       const button = document.querySelector(".options__button");
       const withSalary = document.querySelector(".with-salary");
 
+      //Timer
+      const timerDisplay = document.querySelector("#timer");
+      const logTime = parseInt(sessionStorage.getItem("timer"));
+      const logMinutes = Math.floor(logTime / 60);
+      let logSeconds = logTime % 60;
+      logSeconds = logSeconds < 10 ? "0" + logSeconds : logSeconds;
+      timerDisplay.innerHTML = `${logMinutes}:${logSeconds}`;
+
       if (sessionStorage.getItem("withSalary") == "false")
         withSalary.textContent = "цалингүй";
 
@@ -102,7 +108,12 @@
         sessionStorage.setItem("recipient", recipient);
         sessionStorage.setItem("purpose", purpose);
       });
+
+      button.addEventListener("kepyress", (e) => {
+        if (e.key === "Enter") onclick = "window.location = './print.html'";
+      });
     </script>
+    <script src="autoLogout.js"></script>
     <script src="keyboard/keyboard.js"></script>
   </body>
 </html>

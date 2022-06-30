@@ -24,6 +24,31 @@ $key-bg-color-pressed-special: linear-gradient(
   font-family: "Roboto";
 }
 
+// Printing CSS
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .container * {
+    visibility: visible;
+  }
+
+  .container {
+    position: absolute;
+    left: 40px;
+    top: 0;
+    height: 29.7cm;
+    width: 21cm;
+  }
+
+  .salary {
+    color: inherit !important;
+    text-shadow: none !important;
+  }
+}
+
+// Alert shake animation
 @keyframes shake {
   10%,
   90% {
@@ -260,6 +285,41 @@ $key-bg-color-pressed-special: linear-gradient(
     justify-content: center;
   }
 
+  &__back-button {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 30px;
+    width: 150px;
+    height: 55px;
+    position: relative;
+    top: -350px;
+    left: -210px;
+    cursor: pointer;
+
+    & > * {
+      cursor: pointer;
+    }
+
+    &--hidden {
+      visibility: hidden;
+    }
+
+    &__arrow {
+      color: rgb(98, 215, 98);
+      height: 16px;
+      margin-left: 2em;
+    }
+
+    &__text {
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      margin-left: 1em;
+    }
+  }
+
   &__grid {
     display: grid;
     align-items: center;
@@ -298,39 +358,7 @@ $key-bg-color-pressed-special: linear-gradient(
     }
   }
 }
-.back-button {
-  background-color: white;
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  padding-left: 2em;
-  border: 1px solid lightgrey;
-  border-radius: 30px;
-  width: 150px;
-  height: 55px;
-  position: relative;
-  top: -240px;
-  left: -460px;
-  cursor: pointer;
 
-  & > * {
-    cursor: pointer;
-  }
-  &__arrow {
-    color: rgb(98, 215, 98);
-    margin-top: 1em;
-    height: 20px;
-  }
-  &__text {
-    font-weight: 900;
-    margin-top: 1.15em;
-    margin-left: 1.5em;
-    
-  }
-  &--hidden {
-    visibility: hidden;
-  }
-}
 .options {
   &__wrapper {
     background-color: white;
@@ -475,16 +503,17 @@ $key-bg-color-pressed-special: linear-gradient(
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: auto;
-  width: 1122px; //11.69in=> 29.6926cm
-  height: 625px; //8.27in=>21.0058cm
+  width: 1126px; //11.69in=> 29.6926cm
+  height: 628px; //8.27in=>21.0058cm
   // border: 2px solid #e9594c;
+  // border: 1px solid red;
 
   h1 {
     text-align: center;
     margin: 3em 1em;
     font-size: 18px;
   }
+
   &__cont {
     width: 50%;
     height: inherit;
@@ -498,7 +527,13 @@ $key-bg-color-pressed-special: linear-gradient(
     &__dir {
       display: flex;
       flex-direction: row;
-      margin-top: 6em;
+      margin-top: 4em;
+    }
+
+    &__dirMN {
+      display: flex;
+      flex-direction: row;
+      margin-top: 9em;
     }
   }
 

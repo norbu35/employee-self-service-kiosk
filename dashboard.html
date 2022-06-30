@@ -18,11 +18,11 @@
           <img src="icons/logo.png" alt="Golomt Logo" />
         </div>
         <div class="header__tray">
-          <div class="header__tray__timer">
-            <div class="logout-button" onclick="window.location = './'">
-              <span id="log-time"></span> --Гарах
+          <button class="logout-button" onclick="window.location = './'">
+            <div class="header__tray__timer">
+              <span id="timer"></span> Гарах
             </div>
-          </div>
+          </button>
           <div class="header__tray__user-profile">
             <img
               src="./icons/user.svg"
@@ -76,45 +76,15 @@
     <script async defer>
       const withSalary = document.querySelector("#with-salary");
       const withoutSalary = document.querySelector("#without-salary");
-      //----login
-      // const date = new Date();
-      // sessionStorage.setItem("date", date);
-      // let currentMin = date.getMinutes();
-      // let changeMin;
-      // setTimeout(updateTime, 360000);
-      // function updateTime() {
-      //   changeMin = currentMin;
-      //   while (changeMin < currentMin + 6) {
-      //     changeMin += 1;
-      //     document.getElementById("demo2").innerHTML = changeMin;
-      //     if (changeMin == currentMin + 6) {
-      //       console.log("Таны нэвтрэх хугацаа дууссан байна.");
-      //       window.location = "./";
-      //     }
-      //   }
-      // }
-      const date = new Date();
-      sessionStorage.setItem("date", date);
-      const startMin = 6;
-      let logTime = startMin * 60;
-      const counterdownEl = document.getElementById("log-time");
-      const interval = setInterval(updateCountdown, 1000);
-      function updateCountdown() {
-        const logMinutes = Math.floor(logTime / 60);
-        let logSeconds = logTime % 60;
-        logSeconds = logSeconds < 10 ? "0" + logSeconds : logSeconds;
-        counterdownEl.innerHTML = `${logMinutes}: ${logSeconds}`;
-        logTime--;
-        if (counterdownEl.textContent == "0:00") {
-          sessionStorage.setItem("Login", false);
-        } else {
-          sessionStorage.setItem("Login", true);
-        }
-      }
-      if (sessionStorage.getItem("Login") == false) {
-        window.location = "./index.html";
-      }
-      //--------------------------
+
+      //Timer
+      const timerDisplay = document.querySelector("#timer");
+      const logTime = parseInt(sessionStorage.getItem("timer"));
+      const logMinutes = Math.floor(logTime / 60);
+      let logSeconds = logTime % 60;
+      logSeconds = logSeconds < 10 ? "0" + logSeconds : logSeconds;
+      timerDisplay.innerHTML = `${logMinutes}:${logSeconds}`;
+
       withSalary.addEventListener("click", () => {
         sessionStorage.setItem("withSalary", true);
         window.location = "./options.html";
@@ -130,5 +100,6 @@
         withoutSalary.classList.add("dashboard__item--clicked");
       });
     </script>
+    <script src="autoLogout.js"></script>
   </body>
 </html>

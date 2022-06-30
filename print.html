@@ -18,13 +18,11 @@
           <img src="icons/logo.png" alt="Golomt Logo" />
         </div>
         <div class="header__tray">
-          <div
-            class="header__tray__timer"
-            id="logout-button"
-            onclick="window.location = './'"
-          >
-            6:00 Гарах
-          </div>
+          <button class="logout-button" onclick="window.location = './'">
+            <div class="header__tray__timer">
+              <span id="timer"></span> Гарах
+            </div>
+          </button>
           <div class="header__tray__user-profile">
             <img
               src="./icons/user.svg"
@@ -39,25 +37,22 @@
     </header>
     <main>
       <div class="dashboard__wrapper">
-        <div class="back-button" onclick="history.back()">
-          <img class="back-button__arrow" src="icons/back.svg" />
-          <span class="back-button__text">Буцах</span>
-        </div>
+        <button class="dashboard__back-button" onclick="history.back()">
+          <img class="dashboard__back-button__arrow" src="icons/back.svg" />
+          <span class="dashboard__back-button__text">Буцах</span>
+        </button>
         <div class="print__wrapper">
           <div class="print__page">
-            <!-- <iframe id="template-frame" src="template.html" frameborder="0" scrolling="no"></iframe> -->
             <div class="container">
               <div class="container__cont">
-                <header>
-                  <div class="head__logo">
-                    <img src="icons/logo.png" alt="logo" />
-                  </div>
-                  <p>Голомт банкны Төв байр, Д.Сүхбаатар талбай 5,</p>
-                  <p>Ш/х 22, Улаанбаатар 15160, Монгол улс</p>
-                  <p>Утас: 7011-1646, 1800-1646, Факс: 11-313155</p>
-                  <p>И-мэйл: mail@golomtbank.com,</p>
-                  <p>Вэб: www.golomtbank.com</p>
-                </header>
+                <div class="head__logo">
+                  <img src="icons/logo.png" alt="logo" />
+                </div>
+                <p>Голомт банкны Төв байр, Д.Сүхбаатар талбай 5,</p>
+                <p>Ш/х 22, Улаанбаатар 15160, Монгол улс</p>
+                <p>Утас: 7011-1646, 1800-1646, Факс: 11-313155</p>
+                <p>И-мэйл: mail@golomtbank.com,</p>
+                <p>Вэб: www.golomtbank.com</p>
                 <div style="text-align: center; margin: 1em">
                   _________№__________
                 </div>
@@ -75,7 +70,7 @@
                   эхлэн ажиллаж байгаа нь үнэн болно.
                   <span class="salary"> Цалин: 2,500,000₮.</span>
                 </div>
-                <div class="container__cont__dir">
+                <div class="container__cont__dirMN">
                   <div style="width: 300px; text-align: end">
                     ХҮНИЙ НӨӨЦИЙН УДИРДЛАГЫН ГАЗРЫН ЗАХИРАЛ
                   </div>
@@ -84,15 +79,13 @@
                 </div>
               </div>
               <div class="container__cont">
-                <header>
-                  <div class="head__logo">
-                    <img src="icons/logo.png" alt="logo" />
-                  </div>
-                  <p>Head Office of Golomt bank, D.Sukhbaatar Square 5,</p>
-                  <p>P.O.Box 22, Ulaanbaatar 15160, Mongolia</p>
-                  <p>Phone:+(976)-7011-1646, 1800-1646, Fax:+(976)-11-313155</p>
-                  <p>E-mail: mail@golomtbank.com, Web: www.golomtbank.com</p>
-                </header>
+                <div class="head__logo">
+                  <img src="icons/logo.png" alt="logo" />
+                </div>
+                <p>Head Office of Golomt bank, D.Sukhbaatar Square 5,</p>
+                <p>P.O.Box 22, Ulaanbaatar 15160, Mongolia</p>
+                <p>Phone:+(976)-7011-1646, 1800-1646, Fax:+(976)-11-313155</p>
+                <p>E-mail: mail@golomtbank.com, Web: www.golomtbank.com</p>
                 <div style="text-align: center; margin: 2em 1em">
                   _________№__________
                 </div>
@@ -142,11 +135,22 @@
       const hideButton = document.querySelector(".print__hide-button");
       const salaryFields = document.querySelectorAll(".salary");
       const hideIcon = document.querySelector("#hide-icon");
+      const hideBUtton = document.querySelector(".print__hide-button");
+      const printButton = document.querySelector(".print__button");
+
+      //Timer
+      const timerDisplay = document.querySelector("#timer");
+      const logTime = parseInt(sessionStorage.getItem("timer"));
+      const logMinutes = Math.floor(logTime / 60);
+      let logSeconds = logTime % 60;
+      logSeconds = logSeconds < 10 ? "0" + logSeconds : logSeconds;
+      timerDisplay.innerHTML = `${logMinutes}:${logSeconds}`;
 
       let hide = true;
 
-      if (!sessionStorage.getItem("withSalary")) {
-        salaryFields.forEach((field) => (field.style.display = "none"));
+      if (sessionStorage.getItem("withSalary") == "false") {
+        salaryFields.forEach((e) => (e.style.visibility = "hidden"));
+        hideButton.style.visibility = "hidden";
       }
 
       recipient.forEach((e) => {
@@ -158,11 +162,15 @@
         if (hide) {
           hideIcon.src = "icons/show.svg";
         } else hideIcon.src = "icons/hide.svg";
-
         salaryFields.forEach((field) =>
           field.classList.toggle("print--show-salary")
         );
       });
+
+      printButton.addEventListener("click", () => {
+        window.print();
+      });
     </script>
+    <script src="autoLogout.js"></script>
   </body>
 </html>
