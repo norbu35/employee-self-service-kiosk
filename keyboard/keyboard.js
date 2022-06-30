@@ -300,21 +300,7 @@ const Keyboard = {
                 this.elements.numbersContainer
               );
               this.properties.specialChars = true;
-            } else if (this.properties.specialChars) {
-              this.elements.main.removeChild(this.elements.alphabetContainerSP);
-              if (this.properties.lang == "en") {
-                this.elements.main.insertBefore(
-                  this.elements.alphabetContainerEN,
-                  this.elements.numbersContainer
-                );
-              } else if (this.properties.lang == "mn") {
-                this.elements.main.insertBefore(
-                  this.elements.alphabetContainerMN,
-                  this.elements.numbersContainer
-                );
-              }
-              this.properties.specialChars = false;
-            }
+            } 
           });
           break;
 
@@ -424,21 +410,7 @@ const Keyboard = {
                 this.elements.numbersContainer
               );
               this.properties.specialChars = true;
-            } else if (this.properties.specialChars) {
-              this.elements.main.removeChild(this.elements.alphabetContainerSP);
-              if (this.properties.lang == "en") {
-                this.elements.main.insertBefore(
-                  this.elements.alphabetContainerEN,
-                  this.elements.numbersContainer
-                );
-              } else if (this.properties.lang == "mn") {
-                this.elements.main.insertBefore(
-                  this.elements.alphabetContainerMN,
-                  this.elements.numbersContainer
-                );
-              }
-              this.properties.specialChars = false;
-            }
+            } 
           });
           break;
 
@@ -533,21 +505,7 @@ const Keyboard = {
                 this.elements.numbersContainer
               );
               this.properties.specialChars = true;
-            } else if (this.properties.specialChars ) {
-              this.elements.main.removeChild(this.elements.alphabetContainerSP);
-              if (this.properties.lang == "en") {
-                this.elements.main.insertBefore(
-                  this.elements.alphabetContainerEN,
-                  this.elements.numbersContainer
-                );
-              } else {
-                this.elements.main.insertBefore(
-                  this.elements.alphabetContainerMN,
-                  this.elements.numbersContainer
-                );
-              }
-              this.properties.specialChars = false;
-            }
+            } 
           });
           break;
 
