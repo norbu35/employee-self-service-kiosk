@@ -153,6 +153,8 @@ const Keyboard = {
       "з",
       "к",
       "ъ",
+      "щ",
+      "е",
 
       "й",
       "ы",
@@ -178,6 +180,7 @@ const Keyboard = {
       "ь",
       "в",
       "ю",
+      
 
       "chars",
       "lang",
@@ -347,7 +350,7 @@ const Keyboard = {
     //Init MN layout
     keyLayoutMN.forEach((key) => {
       const keyElementMN = document.createElement("button");
-      const insertLineBreak = ["ъ", "ю", "backspace"].indexOf(key) !== -1;
+      const insertLineBreak = ["щ", "ю", "backspace"].indexOf(key) !== -1;
 
       // Add attributes/classes
       keyElementMN.setAttribute("type", "button");

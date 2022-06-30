@@ -19,11 +19,11 @@ $key-bg-color-pressed-special: linear-gradient(
   rgb(46, 123, 87)
 );
 
-* {
-  // border: 1px solid red;
-  font-family: "Roboto";
-}
 
+body{
+  font-weight: 500;
+  font-family: 'Rubik', sans-serif;
+}
 // Printing CSS
 @media print {
   body * {
@@ -71,7 +71,6 @@ $key-bg-color-pressed-special: linear-gradient(
     transform: translate3d(4px, 0, 0);
   }
 }
-
 //Login Page
 #attempts {
   font-weight: bold;
