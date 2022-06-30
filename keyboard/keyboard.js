@@ -34,6 +34,7 @@ const Keyboard = {
     this.elements.main.classList.add("keyboard", "keyboard--hidden");
     this.elements.alphabetContainerEN.classList.add("keyboard__keys");
     this.elements.alphabetContainerMN.classList.add("keyboard__keys");
+    this.elements.alphabetContainerSP.classList.add("keyboard__keys");
     this.elements.numbersContainer.classList.add("keyboard__keys");
     this.elements.alphabetContainerEN.appendChild(this._createAlphabet()[0]);
     this.elements.alphabetContainerMN.appendChild(this._createAlphabet()[1]);
@@ -208,11 +209,6 @@ const Keyboard = {
       "'",
       "<",
       ">",
-      "[",
-      "]",
-      "|",
-      "\\",
-      "/",
       "backspace",
 
       "[",
@@ -304,7 +300,7 @@ const Keyboard = {
                 this.elements.numbersContainer
               );
               this.properties.specialChars = true;
-            } else {
+            } else if (this.properties.specialChars) {
               this.elements.main.removeChild(this.elements.alphabetContainerSP);
               if (this.properties.lang == "en") {
                 this.elements.main.insertBefore(
@@ -421,7 +417,7 @@ const Keyboard = {
           keyElementMN.classList.add("keyboard__key--special");
           keyElementMN.innerHTML = "{&=";
           keyElementMN.addEventListener("click", () => {
-            this.elements.main.removeChild(this.elements.alphabetContainerEN);
+            this.elements.main.removeChild(this.elements.alphabetContainerMN);
             if (!this.properties.specialChars) {
               this.elements.main.insertBefore(
                 this.elements.alphabetContainerSP,
@@ -537,14 +533,14 @@ const Keyboard = {
                 this.elements.numbersContainer
               );
               this.properties.specialChars = true;
-            } else if (this.properties.specialChars) {
+            } else if (this.properties.specialChars ) {
               this.elements.main.removeChild(this.elements.alphabetContainerSP);
               if (this.properties.lang == "en") {
                 this.elements.main.insertBefore(
                   this.elements.alphabetContainerEN,
                   this.elements.numbersContainer
                 );
-              } else if (this.properties.lang == "mn") {
+              } else {
                 this.elements.main.insertBefore(
                   this.elements.alphabetContainerMN,
                   this.elements.numbersContainer
@@ -559,20 +555,19 @@ const Keyboard = {
           keyElementSP.classList.add("keyboard__key--special");
           keyElementSP.innerHTML = createIconHTML("./icons/language.svg");
           keyElementSP.addEventListener("click", () => {
+            this.elements.main.removeChild(this.elements.alphabetContainerSP);
             if (this.properties.lang == "en") {
-              this.elements.main.removeChild(this.elements.alphabetContainerEN);
-              this.elements.main.insertBefore(
-                this.elements.alphabetContainerMN,
-                this.elements.numbersContainer
-              );
-              this.properties.lang = "mn";
-            } else if (this.properties.lang == "mn") {
-              this.elements.main.removeChild(this.elements.alphabetContainerMN);
               this.elements.main.insertBefore(
                 this.elements.alphabetContainerEN,
                 this.elements.numbersContainer
               );
               this.properties.lang = "en";
+            } else if (this.properties.lang == "mn") {
+              this.elements.main.insertBefore(
+                this.elements.alphabetContainerMN,
+                this.elements.numbersContainer
+              );
+              this.properties.lang = "mn";
             }
           });
           break;

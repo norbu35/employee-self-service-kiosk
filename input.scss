@@ -587,6 +587,7 @@ $key-bg-color-pressed-special: linear-gradient(
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    
     vertical-align: top;
     padding: 0;
     -webkit-tap-highlight-color: transparent;
@@ -600,7 +601,7 @@ $key-bg-color-pressed-special: linear-gradient(
       background: $bg-primary;
       width: 125px;
       color: white;
-
+      
       &:active {
         background: $key-bg-color-pressed-special;
       }
