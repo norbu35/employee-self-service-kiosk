@@ -569,6 +569,7 @@ const Keyboard = {
               );
               this.properties.lang = "mn";
             }
+            this.properties.specialChars = false;
           });
           break;
 
