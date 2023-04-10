@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "kioskboard": "^2.2.0",
     "sass": "^1.52.3",
     "the-new-css-reset": "^1.6.1"
   }
