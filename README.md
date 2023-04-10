@@ -4,7 +4,7 @@ A self-service kiosk app written in vanilla JavaScript for employees to print ou
 
 To demo:
 --------------
-Username: user
+Username: user  
 Password: pass
 --------------
 <-- Remember to run `npm i` for CSS reset -->
