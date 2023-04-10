@@ -467,7 +467,7 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 8px 200px;
+  padding: 8px 0;
   background-color: #f4f5fb;
   border-top: 10px solid;
   border-image-slice: 1;
